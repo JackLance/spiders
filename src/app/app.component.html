@@ -1,0 +1,28 @@
+<form>
+<mat-card>
+<mat-form-field class="thick" appearance="outline" floatLabel="hmm">
+
+      <mat-chip-list>
+      <mat-chip *ngFor="let chip of selected" [disabled]="true" [selectable]="false">{{chip}}</mat-chip>
+          
+
+       <input type="text"
+           matInput
+           placeholder="Visual Options"
+           #input
+           (focus) = "clearChips($event)"
+           (change) = "selectChips($event)"
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+     
+    </mat-chip-list>
+    <mat-autocomplete #autocomplete #auto="matAutocomplete" (optionSelected)="select($event)">
+        <mat-option disabled *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+</mat-form-field>
+<br>
+<mat-slide-toggle></mat-slide-toggle>
+</mat-card>
+<form>

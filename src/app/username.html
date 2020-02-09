@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" class="thick">
+  <mat-label>Password</mat-label>
+  <input #thick matInput required [formControl]="control" type="password">
+  <mat-error *ngIf="control.errors && control.errors.a">Your password must contain between 6 and 12 characters </mat-error>
+  <mat-error *ngIf="control.errors && control.errors.b">Your password must use both uppercase and lowercase characters </mat-error>
+  <mat-error *ngIf="control.errors && control.errors.c">Password not recognized. You must use a common English password. </mat-error>
+  <mat-error *ngIf="control.errors && control.errors.d">Your password must contain at least two letters from "letters" and at least two from "numbers" </mat-error>
+  <mat-error *ngIf="control.errors && control.errors.e">Your password must take at least 18 straight lines to write</mat-error>
+  <mat-error *ngIf="control.errors && control.errors.f">Your password must begin and end with the same letter</mat-error>
+  <mat-error *ngIf="control.errors && control.errors.g">Your password must alternate vowels and consonants </mat-error>
+  <mat-error *ngIf="control.errors && control.errors.h">Your password must have a scrabble score of at least 20</mat-error>
+  <mat-error *ngIf="control.errors && control.errors.i">Your password must not contain any letters from the center row of the keyboard</mat-error>
+</mat-form-field>
