@@ -5,3 +5,7 @@ p {
 table {
   width: 500px;
 }
+
+mat-slider {
+  width: 500px;
+}

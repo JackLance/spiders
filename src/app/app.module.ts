@@ -10,9 +10,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { UsernameComponent } from './username';
 import { PrivacyComponent } from './privacy';
+import { BirthdayComponent } from './birthday';
+
 import {MatTableModule} from '@angular/material/table'; 
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button'; 
+
+
+import {MatSliderModule} from '@angular/material/slider'; 
 @NgModule({
   imports:      [ 
     BrowserModule, 
@@ -27,8 +32,9 @@ import {MatButtonModule} from '@angular/material/button';
   BrowserAnimationsModule,
   MatTableModule,
   MatButtonModule,
+  MatSliderModule,
   ],
-  declarations: [ AppComponent, UsernameComponent, PrivacyComponent ],
-  bootstrap:    [ AppComponent, UsernameComponent, PrivacyComponent ]
+  declarations: [ AppComponent, UsernameComponent, PrivacyComponent, BirthdayComponent ],
+  bootstrap:    [ AppComponent, UsernameComponent , PrivacyComponent, BirthdayComponent]
 })
 export class AppModule { }
