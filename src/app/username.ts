@@ -14,89 +14,61 @@ export class UsernameComponent  {
   control = new FormControl();
   
   constructor(){
-    this.control.setValidators(this.validate)
   }
 
-  info="(Keyboard shortcuts are enabled)\n" + 
-  "Control+A: Alternate\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n"+
-  "Control+A\n";
-  validate(val){
-    const dict = ["executive"]
+  info="Keyboard shortcuts are enabled:\n\n" + 
+  "(WARNING: You don't need to press Crtl or Alt\n"+
+  "and you may refresh or close the page if you do)\n\n"+
+  "Shift+A: Alternates  Shift+N: Create new\n"+
+  "Shift+B: Back        Shift+O: Open\n"+
+  "Shift+C: Copy        Shift+P: Print\n"+
+  "Shift+D: Duplicate   Shift+Q: Close All\n"+
+  "Shift+E: Center      Shift+R: Refresh\n"+
+  "Shift+F: Search      Shift+S: Shift\n"+
+  "Shift+G: Go to       Shift+T: New tab\n"+
+  "Shift+H: Replace     Shift+U: Underline\n"+
+  "Shift+I: Insert      Shift+V: Paste\n"+
+  "Shift+J: Justify     Shift+W: Close\n"+
+  "Shift+K: Hyperlink   Shift+X: Cut\n"+
+  "Shift+L: Left        Shift+Y: Redo\n"+
+  "Shift+M: Minimize    Shift+Z: Undo\n";
+  
+  func(cas, val){
+    switch(cas){
+      case 65: //alternates
 
-    val = val.value as string;
-    if(val == undefined) return {z:true};
-    if(!(val.length > 6 && val.length < 12)){
-      return {a:true};
+        break;
+      case 66: //back
+        return val.split('').reverse().join('');
+        break;
+      case 67: //copy
+        let val2 = "";
+        for(var i=0; i<val.length; i++){
+          val2 += val[i];
+          if(i%3==2) val2 += val[i];
+        }
+        return val2;
+      case 68: //duplicate
+        if(val.length < 4) return val.slice(0,val.length-2)+val;
+        return val.slice(0,val.length-1) + val.slice(0, 3);
+      case 
     }
-    let first = false;
-    let  second = false;
-    for(var i=0; i<val.length; i++){
-      if(val[i] == val[i].toLowerCase() && val[i] != val[i].toUpperCase()) first = true;
-      if(val[i] != val[i].toLowerCase() && val[i] == val[i].toUpperCase()) second = true;
-    }
-    if(!first || !second) return {b:true};
+  }
 
-    if(!dict.includes(val.toLowerCase())) return {c:true};
-    //c
-    let lt = ['l','e','t','r','s'];
-    let nm = ['n','u','m','b','e','r','s'] ;
-    let ltcount = 0;
-    let nmcount = 0;
-    for(let letter of lt){
-      if(val.toLowerCase().includes(letter)) ltcount++;
+  press(event){
+
+    console.log(event)
+    if(event.keyCode >= 65 && event.keyCode <= 80){
+      this.control.setValue(this.func(event.keyCode,this.control.value))
+      event.preventDefault();
     }
-    for(let letter of nm){
-      if(val.toLowerCase().includes(letter)) nmcount++;
-    }
-    if(ltcount<2 || nmcount<2) return {d:true}
-    let lines = {A:3, a:1, B:1, b:1, C:0, c:0, D:1, d:1, E:4, e:1, F:3, f:1, G:1, g:0, H:3, h:1, I:1, i:1, J:1, j:0, K:3, k:3, L:2, l:1, M:4, m:1, N:3, n:1, O:0, o:0, P:1, p:1, Q:1, q:1, R:2, r:1, S:0, s:0, T:2, t:2, U:0, u:1, V:2, v:2, W:4, w:4, X:2, x:2, Y:3, y:2, Z:3, z:3};
-    let total = 0;
-    for(var i=0; i<val.length; i++){
-      total+=lines[val[i]];
-    }
-    if(total<18) return {e:true};
-    if(val[0] != val[val.length-1]) return {f:true}
-    for(var i=1; i<val.length; i++){
-      let x = val[i].toLowerCase();
-      let y = val[i-1].toLowerCase();
-      let vw = ['a','e','i','o','u'];
-      if(x!='y' && y!='y' && vw.includes(x)==vw.includes(y)) return {g:true}
-    }
-    lines = {a:1, b:3, c:3, d:2, e:1, f:4, g:2, h:4, i:1, j:10, k:5, l:1, m:3, n:1, o:1, p:3, q:10, r:1, s:1, t:1, u:1, v:4, w:4, x:8, y:4, z:10};
-     total = 0;
-    for(var i=0; i<val.length; i++){
-      total+=lines[val[i].toLowerCase()];
-    }
-    if(total<18) return {h:true};
-    let row = ['a','s','d','f','g','h','j','k','l'];
-    for(let ltr of row){
-      if(val.toLowerCase().includes(ltr)) return {i:true};
-    }
-    return undefined;
+    //if ( event.keyCode == 97 ) {
+    //     event.preventDefault();
+    //}
+  }
+
+  click(){
+    this.control.setValue('MemberUsername')
   }
 
   

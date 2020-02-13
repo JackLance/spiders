@@ -1,4 +1,4 @@
-<mat-form-field appearance="outline" class="thick">
-  <mat-label>Username</mat-label>
-  <input #thick matInput required [formControl]="control" [matTooltip]="info" matTooltipPosition="right" value="MemberAccount" [matTooltipClass]="'my-tooltip'">
+<mat-form-field appearance="outline" class="thick" (click)="click()">
+  <mat-label>Member Username</mat-label>
+  <input #thick matInput required [formControl]="control" [matTooltip]="info" matTooltipPosition="right" [matTooltipClass]="'my-tooltip'" (keypress)="press($event)" >
 </mat-form-field>

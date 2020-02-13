@@ -28,5 +28,9 @@ input {
 * { font-family: Roboto; } 
 
 .my-tooltip {
-    white-space: pre-line;
+    white-space: pre;
+    font-family: Monospace !important;
+    width:100% !important;
+    max-width: 1000px;
+    min-width: 300px;
 }
