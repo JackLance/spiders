@@ -17,6 +17,33 @@ export class UsernameComponent  {
     this.control.setValidators(this.validate)
   }
 
+  info="(Keyboard shortcuts are enabled)\n" + 
+  "Control+A: Alternate\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n"+
+  "Control+A\n";
   validate(val){
     const dict = ["executive"]
 
