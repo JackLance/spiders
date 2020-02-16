@@ -11,6 +11,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
 import { AppComponent } from './app.component';
 import { UsernameComponent } from './username';
+import { InterestsComponent } from './interests';
 import { PrivacyComponent } from './privacy';
 import { PrimeComponent } from './prime';
 import { PasswordComponent } from './password';
@@ -48,6 +49,7 @@ import {MatSliderModule} from '@angular/material/slider';
     PrivacyComponent, 
     BirthdayComponent,  
     PrimeComponent,
+    InterestsComponent,
     PasswordComponent,
  ],
   bootstrap:    [ 
@@ -57,6 +59,7 @@ import {MatSliderModule} from '@angular/material/slider';
    BirthdayComponent,  
    PrimeComponent,
    PasswordComponent,
+   InterestsComponent,
 ]
 })
 export class AppModule { }
