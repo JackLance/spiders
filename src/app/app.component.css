@@ -9,3 +9,7 @@ table {
 mat-slider {
   width: 500px;
 }
+
+mat-grid-tile {
+  background: lightblue;
+}
