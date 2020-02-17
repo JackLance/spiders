@@ -8,7 +8,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import {MatStepperModule} from '@angular/material/stepper';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select'; 
 import {MatTooltipModule} from '@angular/material/tooltip'; 
@@ -28,6 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSliderModule} from '@angular/material/slider'; 
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   imports:      [ 
     BrowserModule, 
@@ -38,6 +40,7 @@ import {MatDialogModule} from '@angular/material/dialog';
   MatChipsModule,
   MatSlideToggleModule,
   MatCheckboxModule,
+  MatRadioModule,
   MatDialogModule,
   MatCardModule,
   MatInputModule,
@@ -45,6 +48,7 @@ import {MatDialogModule} from '@angular/material/dialog';
   MatTableModule,
   MatButtonModule,
   MatProgressSpinnerModule,
+  MatStepperModule,
   MatSliderModule,
   MatGridListModule,
   MatSelectModule,

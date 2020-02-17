@@ -1,1 +1,21 @@
-<h4></h4>
+<h4>Start up your account by following people</h4>
+<br>
+Our masterful AI mind technology can help you decide who to follow! Choose five of your interests below, and we'll peg your psychological profile and give you suggestions of who to follow.
+<br>
+<mat-horizontal-stepper [linear]="true" #stepper>
+  <mat-step *ngFor="let i of [0,1,2,3,4]" [stepControl]="groups[i]">
+    <div [formGroup]="groups[i]">
+    <mat-radio-group [formControlName]="'ctrl'" (change)="goForward(stepper)" required>
+      <mat-radio-button value="1" (change)="goForward(stepper)">Option 1</mat-radio-button>
+      <mat-radio-button value="2" >Option 2</mat-radio-button>
+    </mat-radio-group>
+
+    </div>
+  </mat-step>
+
+<mat-step>
+  {{asdf}}
+</mat-step>
+
+
+</mat-horizontal-stepper>
