@@ -8,6 +8,44 @@
   
 }
 
+.mat-dialog-container{
+  padding: 5px !important;
+}
+
+.mg{
+  width: 100%; 
+  height: 100%; 
+  //filter: blur(1px);
+  //opacity:.2 !important; 
+}
+
+.mz{
+  width: 80%; 
+  height: 80%; 
+
+  //filter: blur(1px);
+  //opacity:.2 !important; 
+}
+
+.mo{
+  width:20px;
+  height:20px;
+  position:absolute;
+  left:0;
+  top:0;
+  filter: drop-shadow(1px 1px 4px #222);
+}
+
+.mk{
+  width: 100%; 
+  height: 100%; 
+  background: red !important;
+  background-color: red !important;
+
+  //filter: blur(5px);
+  opacity:.25 !important; 
+}
+
 mat-chip {
   opacity:.8 !important; 
 

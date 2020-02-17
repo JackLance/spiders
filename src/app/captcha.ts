@@ -23,7 +23,13 @@ export class CaptchaComponent  {
           width: '500px',
         });
         dialogRef.afterClosed().subscribe(result => {
-          this.asdf = 'check';
+          console.log(result)
+          if(!result){
+            this.asdf = 'check';
+          }
+          else{
+            this.asdf = "win";
+          }
         });
     }, 1000);
   }

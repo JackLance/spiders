@@ -1,39 +1,16 @@
-<h4>Check all of the following which contain road signs:</h4>
+<div style="height:100px; background-color:#5090e0; color:white; padding:5px;"><br>Select all images with <b>road signs:</b></div>
+<br>
 <mat-grid-list cols="6" rowHeight="1:1">
-  <mat-grid-tile>11</mat-grid-tile>
-  <mat-grid-tile>12</mat-grid-tile>
-  <mat-grid-tile><img src="https://i.imgur.com/PPKY5x0.png"></mat-grid-tile>
-  <mat-grid-tile>14</mat-grid-tile>
-  <mat-grid-tile>15</mat-grid-tile>
-  <mat-grid-tile>16</mat-grid-tile>
-  <mat-grid-tile>21</mat-grid-tile>
-  <mat-grid-tile><img src="https://i.imgur.com/PPKY5x0.png"></mat-grid-tile>
-  <mat-grid-tile>23</mat-grid-tile>
-  <mat-grid-tile><img src="https://i.imgur.com/PPKY5x0.png"></mat-grid-tile>
-  <mat-grid-tile>25</mat-grid-tile>
-  <mat-grid-tile>26</mat-grid-tile>
-  <mat-grid-tile>31</mat-grid-tile>
-  <mat-grid-tile>32</mat-grid-tile>
-  <mat-grid-tile>33</mat-grid-tile>
-  <mat-grid-tile><img src="https://i.imgur.com/SabBB37.png"></mat-grid-tile>
-  <mat-grid-tile>35</mat-grid-tile>
-  <mat-grid-tile>36</mat-grid-tile>
-  <mat-grid-tile>41</mat-grid-tile>
-  <mat-grid-tile>42</mat-grid-tile>
-  <mat-grid-tile>43</mat-grid-tile>
-  <mat-grid-tile>44</mat-grid-tile>
-  <mat-grid-tile>45</mat-grid-tile>
-  <mat-grid-tile>46</mat-grid-tile>
-  <mat-grid-tile>51</mat-grid-tile>
-  <mat-grid-tile>52</mat-grid-tile>
-  <mat-grid-tile>53</mat-grid-tile>
-  <mat-grid-tile>54</mat-grid-tile>
-  <mat-grid-tile>55</mat-grid-tile>
-  <mat-grid-tile>56</mat-grid-tile>
-  <mat-grid-tile><img src="https://i.imgur.com/PPKY5x0.png"></mat-grid-tile>
-  <mat-grid-tile><img src="https://i.imgur.com/SabBB37.png"></mat-grid-tile>
-  <mat-grid-tile>63</mat-grid-tile>
-  <mat-grid-tile><img src="https://i.imgur.com/PPKY5x0.png"></mat-grid-tile>
-  <mat-grid-tile>65</mat-grid-tile>
-  <mat-grid-tile>66</mat-grid-tile>
+  
+  
+
+
+  <mat-grid-tile *ngFor="let i of arr">
+    <img [src]='srcs[i[0]][i[1]]' class="mg" (click)='process($event,i[0],i[1])' *ngIf="!vals[i[0]][i[1]].ok && adj(i[0], i[1])">
+    <img [src]='srcs[i[0]][i[1]]' class="mk" (click)='process($event,i[0],i[1])' *ngIf="!vals[i[0]][i[1]].ok && !adj(i[0], i[1])">
+   <img [src]='srcs[i[0]][i[1]]' class="mz" *ngIf="vals[i[0]][i[1]].ok">
+   <img src='https://i.imgur.com/pxbFjUd.png' class="mo" *ngIf="vals[i[0]][i[1]].ok">
+  </mat-grid-tile>
 </mat-grid-list>
+<br>
+<button mat-raised-button  style="color:white; background-color:#5090e0; float:right;" (click)="check()">Verify</button>
