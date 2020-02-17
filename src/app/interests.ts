@@ -21,11 +21,44 @@ export class InterestsComponent  {
     'Redshank',
     'Yellowstone',]
   code = [0,3,1,6,5]
-  get asdf(){
+  srcs = ['',
+  'https://i.imgur.com/q6o2HX7.jpg',
+  'https://i.imgur.com/Bxrz70B.jpg',
+  'https://i.imgur.com/ATrEkNn.jpg',
+  'https://i.imgur.com/EflJU0n.jpg',
+  'https://i.imgur.com/nkSBoo7.jpg',
+
+  'https://i.imgur.com/3Kbgeq3.jpg',
+  'https://i.imgur.com/7UgVMv0.jpg',
+  'https://i.imgur.com/7l7d2QF.jpg',
+  'https://i.imgur.com/cDTNmnk.jpg',
+  'https://i.imgur.com/PB79Uh6.jpg',
+
+  'https://i.imgur.com/iRZ3JEV.jpg',
+  'https://i.imgur.com/9m9KEMN.jpg',
+  'https://i.imgur.com/myWUTWG.jpg',
+  'https://i.imgur.com/L3dHrzi.jpg',
+  'https://i.imgur.com/ncNy2Kn.jpg'
+  ];
+  asdf = []
+  groups = [
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()})];
+  constructor(){
+    for(let group of this.groups){
+      group.controls['ctrl'].setValidators(Validators.required)
+    }
+  }
+
+  goForward(stepper: MatStepper){
+    setTimeout(()=>stepper.next(),300);
     let guess = this.groups.map(x=>x.value.ctrl);
     let zero = 0;
     let one = 0;
-    for(var i=0; i<4; i++){
+    for(var i=0; i<5; i++){
       if(guess[i] == this.code[i]){
         zero++;
       }
@@ -46,31 +79,16 @@ export class InterestsComponent  {
     }
     while(one>0){
       let ind = Math.floor(Math.random() * ones.length);
-      three.push(zeroes[ind]);
+      three.push(ones[ind]);
       ones.splice(ind, 1);
       one--;
     }
     while(two>0){
       let ind = Math.floor(Math.random() * twos.length);
-      three.push(zeroes[ind]);
+      three.push(twos[ind]);
       twos.splice(ind, 1);
       two--;
     }
-    return JSON.stringify(three)
-  }
-  groups = [
-    new FormGroup({ctrl:new FormControl()}),
-    new FormGroup({ctrl:new FormControl()}),
-    new FormGroup({ctrl:new FormControl()}),
-    new FormGroup({ctrl:new FormControl()}),
-    new FormGroup({ctrl:new FormControl()})];
-  constructor(){
-    for(let group of this.groups){
-      group.controls['ctrl'].setValidators(Validators.required)
-    }
-  }
-
-  goForward(stepper: MatStepper){
-    setTimeout(()=>stepper.next(),300);
+    this.asdf = three;
 }
 }

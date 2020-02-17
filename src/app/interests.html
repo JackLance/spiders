@@ -13,7 +13,7 @@ Our masterful AI mind technology can help you decide who to follow! Choose five 
   </mat-step>
 
 <mat-step>
-  {{asdf}}
+  <img *ngFor="let i of asdf" [src]="srcs[i]" style="width:100px;height:100px">
 </mat-step>
 
 
