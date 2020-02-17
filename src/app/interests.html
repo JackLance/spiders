@@ -6,8 +6,7 @@ Our masterful AI mind technology can help you decide who to follow! Choose five 
   <mat-step *ngFor="let i of [0,1,2,3,4]" [stepControl]="groups[i]">
     <div [formGroup]="groups[i]">
     <mat-radio-group [formControlName]="'ctrl'" (change)="goForward(stepper)" required>
-      <mat-radio-button value="1" (change)="goForward(stepper)">Option 1</mat-radio-button>
-      <mat-radio-button value="2" >Option 2</mat-radio-button>
+      <mat-radio-button *ngFor="let j of [0,1,2,3,4,5,6]" [value]="j">{{options[j]}}</mat-radio-button>
     </mat-radio-group>
 
     </div>

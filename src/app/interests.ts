@@ -12,9 +12,16 @@ import { MatStepper } from '@angular/material/stepper';
   styleUrls: [ './app.component.css' ]
 })
 export class InterestsComponent  {
-
+  options = [
+    'Bluebirds',
+    'Greenpeace',
+'Orange juice',
+'Pink Floyd',
+'Purple heart',
+'Redshank',
+'Yellowstone',]
   get asdf(){
-    return JSON.stringify(this.groups.map(x=>x.value);
+    return JSON.stringify(this.groups.map(x=>x.value));
   }
   groups = [
     new FormGroup({ctrl:new FormControl()}),

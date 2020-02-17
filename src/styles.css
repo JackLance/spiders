@@ -12,6 +12,12 @@
   font-family: 'Material Icons' !important;
 }
 
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
 .mat-dialog-container{
   padding: 5px !important;
 }
