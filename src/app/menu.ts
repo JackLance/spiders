@@ -13,15 +13,17 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class MenuComponent  {
   
-  names=[['a', ['s', 'd']],['s', ['a', 'd']],['d', ['a', 's']]];
+  names=[['a', ['as', 'ad']],['s', ['sa', 'sd']],['d', ['da', 'ds']]];
   menus = {}
   init(a, s){
-
     this.menus[s] = a;
-    
   }
 
   asdf(x){
     return x;
+  }
+
+  addChildren(){
+
   }
 }

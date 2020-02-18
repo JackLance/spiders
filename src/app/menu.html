@@ -1,8 +1,9 @@
 
 <mat-menu *ngFor="let menu of names" [style]='init(thisMenu, menu[0])' #thisMenu='matMenu'>
-  
-  <button *ngFor="let sub of menu[1]" mat-menu-item [matMenuTriggerFor]="menus[sub]">{{sub}}</button>
-  <button mat-menu-item>System settings</button>
+  <ng-template matMenuContent>
+    <div [style]="addChildren(menu)"></div>
+    <button *ngFor="let sub of menu[1]" mat-menu-item [matMenuTriggerFor]="menus[sub]">{{sub}}</button>
+    <button mat-menu-item>System settings</button>
   </ng-template>
 </mat-menu>
 
