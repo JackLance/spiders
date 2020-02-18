@@ -22,29 +22,43 @@ export class BirthdayComponent {
     this.slideC = z;
   }
   aa(e){
-    let del = e.value - (this.a + 2*this.b - 0.5 * this.c);
-    this.a += del;
+    let del = e.value - (this.a + this.b+1);
+    if(this.inBd(this.a+del, this.b, this.c)) 
+      this.a += del;
     this.recalc();
+    
   }
 
   bb(e){
-    let del = e.value - (-this.a+this.b+this.c);
+    let del = e.value - (-this.a+this.b+this.c+1);
+    if(this.inBd(this.a, this.b+del, this.c)) 
     this.b += del;
         this.recalc();
 
   }
 
   cc (e){
-    let del = e.value - (2*this.a + 4*this.b + this.c);
+    let del = e.value - (this.a-this.b + this.c+1);
+    if(this.inBd(this.a, this.b, this.c+del)) 
     this.c += del;
         this.recalc();
 
   }
 
+  inBd(m, n, o){
+    if(m+n < -1) return console.log('fals1e');
+    if(m+n > 30) return console.log('fals2e');
+    if(-m + n + o < -1) return console.log('fa3lse');
+    if(-m + n + o > 11) return console.log('fa4lse');
+    if(m-n + o < -1) return console.log('fal5se');
+    if(m-n + o > 99) return console.log('fal6se');
+    return true;
+  }
+
   recalc(){
-    this.slideA.value = this.a + 2*this.b - 0.5 * this.c;
-    this.slideB.value = (-this.a+this.b+this.c);
-    this.slideC.value = 2*this.a + 4*this.b + this.c;
+    this.slideA.value = this.a + this.b+1;
+    this.slideB.value = (-this.a+this.b+this.c+1);
+    this.slideC.value = this.a-this.b + this.c+1;
 
   }
 

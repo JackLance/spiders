@@ -53,6 +53,20 @@ export class InterestsComponent  {
     }
   }
 
+  reset(stepper: MatStepper){
+    stepper.previous()
+    stepper.previous()
+    stepper.previous()
+    stepper.previous()
+    stepper.previous()
+    this.groups = [
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()}),
+    new FormGroup({ctrl:new FormControl()})];
+  }
+
   goForward(stepper: MatStepper){
     setTimeout(()=>stepper.next(),300);
     let guess = this.groups.map(x=>x.value.ctrl);
