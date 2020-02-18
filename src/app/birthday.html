@@ -1,23 +1,29 @@
 
+<div aria-label="i dont know what im doing" [style]="init(slideA, slideB, slideC)"></div>
 <mat-slider
+  #slideA
   thumbLabel
   [displayWith]="dayLabel"
   tickInterval="1"
   value = '0'
-  min="0"
-  max="30"></mat-slider>
+  [min]="slideA.value<0?slideA.value:0"
+  [max]="slideA.value>30?slideA.value:30"
+  (input)="aa($event)"></mat-slider>
 <mat-slider
+  #slideB
   thumbLabel
   [displayWith]="monthLabel"
   tickInterval="1"
   value = '0'
-  min="0"
-  max="12"
-  (in)="bb($event)"></mat-slider>
+  [min]="slideB.value<0?slideB.value:0"
+  [max]="slideB.value>12?slideB.value:12"
+  (input)="bb($event)"></mat-slider>
 <mat-slider
+  #slideC
   thumbLabel
   [displayWith]="yearLabel"
   tickInterval="1"
   value = '0'
-  min="0"
-  max="100"></mat-slider>
+  [min]="slideC.value<0?slideC.value:0"
+  [max]="slideC.value>100?slideC.value:100"
+  (input)="cc($event)"></mat-slider>
