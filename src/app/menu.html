@@ -4,8 +4,8 @@
     <div [style]="init2(thisMenu,menu)"></div>
     <div *ngIf="ready[menu]">
       <div *ngFor="let sub of nexts[menu[menu.length-1]]">
-    <button  mat-menu-item *ngIf="menus[menu.join('')+sub]" [matMenuTriggerFor]="menus[menu.join('')+sub]">{{sub}}</button>
-    <button  mat-menu-item *ngIf="!menus[menu.join('')+sub]" >{{sub}}</button>
+    <button  mat-menu-item *ngIf="menus[menu.join('')+sub[1]]" [matMenuTriggerFor]="menus[menu.join('')+sub[1]]">{{sub[0]}}</button>
+    <button  mat-menu-item *ngIf="!menus[menu.join('')+sub[1]]" >{{sub}}</button>
     </div>
     </div>
   </ng-template>

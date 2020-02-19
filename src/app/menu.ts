@@ -15,10 +15,11 @@ import {MatMenu} from '@angular/material/menu';
 export class MenuComponent  {
   
   nexts = {
-    'a': ['s', 'd'],
-    's': ['a', 'd'],
-    'd': ['a', 's'],
-    'start': ['a', 's', 'd', 'asdfasdf']
+    'loading': [['loading.', 'loading.']],
+    'loading.': [['loading..', 'loading..']],
+    'loading..': [['loading...', 'start']],
+    'options': [['Reload menu', 'loading'], ['Query diagnostics wizard', 'wizard']],
+    'start': ['<b>FATAL ERROR', 'Failed to load resource:', 'entities.country_list', ['Diagnostic Options', 'options']]
   }
   namesT = []
   names = [['start']]
@@ -32,10 +33,10 @@ export class MenuComponent  {
     let end = s[s.length-1];
     for(let next of this.nexts[end]){
       let newone = s.slice();
-      if(!tnexts[next]) continue;
-      newone.push(next);
+      if(!this.nexts[next[1]]) continue;
+      newone.push(next[1]);
       if(this.namesT.includes(newone.join())) return;
-      this.names.push(newone);
+      this.names.push(newone);  
       this.namesT.push(newone.join())
       //this.menus[newone] = new MatMenu();
     }
