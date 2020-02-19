@@ -1,19 +1,17 @@
 
-<mat-menu *ngFor="let menu of names" [style]='init(thisMenu, menu[0])' #thisMenu='matMenu'>
+<mat-menu [yPosition]="idk(menu)" [xPosition]="idk2(menu)" *ngFor="let menu of names" [style]='init(thisMenu, menu)' #thisMenu='matMenu'>
   <ng-template matMenuContent>
-    <div [style]="addChildren(menu)"></div>
-    <button *ngFor="let sub of menu[1]" mat-menu-item [matMenuTriggerFor]="menus[sub]">{{sub}}</button>
-    <button mat-menu-item>System settings</button>
+    <div [style]="init2(thisMenu,menu)"></div>
+    <div *ngIf="ready[menu]">
+      <div *ngFor="let sub of nexts[menu[menu.length-1]]">
+    <button  mat-menu-item *ngIf="menus[menu.join('')+sub]" [matMenuTriggerFor]="menus[menu.join('')+sub]">{{sub}}</button>
+    <button  mat-menu-item *ngIf="!menus[menu.join('')+sub]" >{{sub}}</button>
+    </div>
+    </div>
   </ng-template>
 </mat-menu>
 
-<mat-menu #appMenu="matMenu">
-  <ng-template matMenuContent>
-    <button *ngFor="let menu of names" mat-menu-item [matMenuTriggerFor]="menus[menu[0]]">{{menu[0]}}</button>
-    <button mat-menu-item>Help</button>
-  </ng-template>
-</mat-menu>
 
-<button mat-icon-button [matMenuTriggerFor]="appMenu">
+<button mat-icon-button [matMenuTriggerFor]="menus['start']">
   Menu
 </button>
