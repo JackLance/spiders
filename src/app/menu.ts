@@ -15,11 +15,12 @@ import {MatMenu} from '@angular/material/menu';
 export class MenuComponent  {
   
   nexts = {
+    'wizard': ['Querying wizard'],
     'loading': [['loading.', 'loading.']],
     'loading.': [['loading..', 'loading..']],
     'loading..': [['loading...', 'start']],
     'options': [['Reload menu', 'loading'], ['Query diagnostics wizard', 'wizard']],
-    'start': ['<b>FATAL ERROR', 'Failed to load resource:', 'entities.country_list', ['Diagnostic Options', 'options']]
+    'start': ['FATAL ERROR', 'Failed to load resource:', 'entities.country_list', ['Diagnostic Options', 'options']]
   }
   namesT = []
   names = [['start']]
