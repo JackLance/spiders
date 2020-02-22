@@ -12,6 +12,24 @@
   font-family: 'Material Icons' !important;
 }
 
+
+.dark{
+  background-color:#060606 !important;
+}
+
+.medium{
+  background-color:#333333 !important;
+}
+
+button {
+  white-space:normal !important;
+  text-overflow:unset !important;
+  height: auto !important;
+  line-height: 24px !important;
+}
+
+
+
 mat-radio-group {
   display: flex;
   flex-direction: row;

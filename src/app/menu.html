@@ -1,17 +1,21 @@
 
-<mat-menu [yPosition]="idk(menu)" [xPosition]="idk2(menu)" *ngFor="let menu of names" [style]='init(thisMenu, menu)' #thisMenu='matMenu'>
+<mat-menu [yPosition]="idk(thisMenu, menu)" [xPosition]="idk2(thisMenu, menu)" *ngFor="let menu of names" [class]='init(thisMenu, menu)' #thisMenu='matMenu'>
   <ng-template matMenuContent>
     <div [style]="init2(thisMenu,menu)"></div>
+    <div *ngFor="let sub of getNexts(menu)">
     <div *ngIf="ready[menu]">
-      <div *ngFor="let sub of nexts[menu[menu.length-1]]">
-    <button  mat-menu-item *ngIf="menus[menu.join('')+sub[1]]" [matMenuTriggerFor]="menus[menu.join('')+sub[1]]">{{sub[0]}}</button>
-    <button  mat-menu-item *ngIf="!menus[menu.join('')+sub[1]]" >{{sub}}</button>
+      
+    <button  mat-menu-item *ngIf="isArr(sub)" [matMenuTriggerFor]="menus[follow(menu, sub).join('')]">{{sub[0]}}</button>
+    <button  mat-menu-item *ngIf="!isArr(sub)" >{{sub}}</button>
+    </div>
+    <div>
+      <button mat-menu-item *ngIf="!ready[menu]" >...</button>
     </div>
     </div>
   </ng-template>
 </mat-menu>
 
 
-<button mat-icon-button [matMenuTriggerFor]="menus['start']">
+<button mat-icon-button [matMenuTriggerFor]="menus['0000000000start']">
   Menu
 </button>
