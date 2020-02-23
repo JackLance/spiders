@@ -22,6 +22,7 @@ import { PrimeComponent } from './prime';
 import { PasswordComponent } from './password';
 import { DialogueComponent } from './dialogue';
 import { MenuComponent } from './menu';
+import { MetaComponent } from './meta';
 
 import { BirthdayComponent } from './birthday';
 import {MatTableModule} from '@angular/material/table'; 
@@ -69,6 +70,7 @@ import {MatRadioModule} from '@angular/material/radio';
     CaptchaComponent,
     DialogueComponent,
     MenuComponent,
+    MetaComponent,
  ],
   bootstrap:    [ 
    AppComponent,
@@ -80,6 +82,7 @@ import {MatRadioModule} from '@angular/material/radio';
    InterestsComponent,
    CaptchaComponent,
    MenuComponent,
+    MetaComponent,
 ]
 })
 export class AppModule { }
