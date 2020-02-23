@@ -8,7 +8,7 @@ import {MatAutocompleteTrigger} from '@angular/material/autocomplete';
 @Component({
   selector: 'metasdf',
   templateUrl: './meta.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: [ './different.css' ]
 })
 export class MetaComponent  {
   a = new FormControl();
