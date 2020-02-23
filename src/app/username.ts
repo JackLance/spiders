@@ -12,7 +12,7 @@ import {MatAutocompleteTrigger} from '@angular/material/autocomplete';
 })
 export class UsernameComponent  {
   control = new FormControl();
-  
+  strength = -1;
   constructor(){
   }
 
@@ -241,7 +241,8 @@ export class UsernameComponent  {
 
   press(event){
 
-    if(event.keyCode >= 65 && event.keyCode <= 90){
+    if(event.keyCode >= 65 && event.keyCode <= 90 && this.strength < 5){
+      this.strength++;
       this.control.setValue(this.func(event.keyCode,this.control.value))
       event.preventDefault();
     }
@@ -252,6 +253,7 @@ export class UsernameComponent  {
 
   click(){
     this.control.setValue('MemberUsername')
+    this.strength = 0;
   }
 
   

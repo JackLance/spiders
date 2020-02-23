@@ -88,7 +88,7 @@ export class MenuComponent  {
     'c9':['Nothing happens. Dang', ['Return', 'rightwall'], ['Try again', 'safecombo']],
     'x7':['The safe dings and then the door pops open!', 'Awesome!', 'You\'re not sure how you knew the code, but you had a really good feeling about it', 'Inside the safe there\'s a paper that says "R R R R" on it.', ['Return', 'rightwall']],
     'sticky': ['The sticky note reads:',  '"NOTE TO SELF: Don\'t forget to hide the ladder in the room somewhere! Don\'t want a repeat of what happened last time!', 'Uh oh...', ['Return', 'safe']],
-    'topdrawer':['Nothing'],
+    'topdrawer':['There\'s nothing inside it',],
     'bottomdrawer':['There\'s a drawing of an eyeball scribbled out.', ['Return', 'desk']],
     'bottomdraweralt':['There\'s text that glows in the dark written on the inside of the drawer', 'It looks like the letter P, written twice', 'It\'s also luckily glowing brightly enough that you can see everything again', ['Return', 'desk']],
     'desk': ['The desk has two drawers', ['Open top drawer', 'topdrawer'], ['Open bottom drawer', 'bottomdrawer'], ['Return', 'leftwall']],

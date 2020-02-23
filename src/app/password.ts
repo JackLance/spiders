@@ -15,7 +15,17 @@ export class PasswordComponent  {
   
   
 
-  wordlist = [
+
+constructor(){
+    this.control.setValidators(this.validate)
+    
+  }
+
+
+
+  validate(val){
+    
+    const dict = [
 'aardvark',
 'aardwolf',
 'aaron',
@@ -58126,16 +58136,6 @@ export class PasswordComponent  {
 'zoos',
 'zulu',
 'zulus'];
-constructor(){
-    this.control.setValidators(this.validate)
-    
-  }
-
-
-
-  validate(val){
-    
-    const dict = this.wordlist;
 
     val = val.value as string;
     console.log(val);
@@ -58164,7 +58164,7 @@ constructor(){
       if(val.toLowerCase().includes(letter)) nmcount++;
     }
     if(ltcount<2 || nmcount<2) return {d:true}
-    let lines = {A:3, a:1, B:1, b:1, C:0, c:0, D:1, d:1, E:4, e:1, F:3, f:1, G:1, g:0, H:3, h:1, I:1, i:1, J:1, j:0, K:3, k:3, L:2, l:1, M:4, m:1, N:3, n:1, O:0, o:0, P:1, p:1, Q:1, q:1, R:2, r:1, S:0, s:0, T:2, t:2, U:0, u:1, V:2, v:2, W:4, w:4, X:2, x:2, Y:3, y:2, Z:3, z:3};
+    let lines = {A:3, a:1, B:1, b:1, C:0, c:0, D:1, d:1, E:4, e:1, F:3, f:1, G:1, g:0, H:3, h:1, I:3, i:1, J:1, j:0, K:3, k:3, L:2, l:1, M:4, m:1, N:3, n:1, O:0, o:0, P:1, p:1, Q:1, q:1, R:2, r:1, S:0, s:0, T:2, t:2, U:0, u:1, V:2, v:2, W:4, w:4, X:2, x:2, Y:3, y:2, Z:3, z:3};
     let total = 0;
     for(var i=0; i<val.length; i++){
       total+=lines[val[i]];
