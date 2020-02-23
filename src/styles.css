@@ -21,6 +21,11 @@
   background-color:#333333 !important;
 }
 
+.square{
+  width: 160px !important;
+  height: 160px !important;
+}
+
 button {
   white-space:normal !important;
   text-overflow:unset !important;

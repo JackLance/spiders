@@ -18,7 +18,15 @@ export class MenuComponent  {
     'intopit':['You\'re at the bottom of a pit, you can\'t get out', ['Look around.', 'lookpit']],
     'fallpit':['Oof, that was quite a fall.', 'You landed on the bottom of the pit, and you\'re lying down', ['Get up.', 'intopit']],
     'pit':['You can almost see to the bottom of the pit', 'it looks like there\'s something written down there.','But it\'s too deep to get out of once you get in', ['Jump into pit', 'fallpit'], ['Return', 'rightwall']],
-    'frontwall': ['In front of you, you see a stack of hay', ['Examine hay stack', 'haystack'],['Turn left', 'leftwall'], ['Turn right', 'rightwall']],
+    'chest': ['There is a chest here with a lock', ['Examine directional lock', 'directional'], ['Try a combination', 'chestcombo'], ['Return', 'frontwall']],
+    'chestcombo':[],
+    'directional': [['You notice 5 things about the lock', 'directional1']],
+    'directional1': ['1) The lock appears to take a 5 direction combination and resets', [ 'automatically', 'directional2']],
+    'directional2': ['2) The lock is rotated by 45 degrees, so the directions are NE, NW, SE, and', ['SW', 'directional3']],
+    'directional3': ['3) The lock is placed around the chest\'s clasp tightly so you cannot open the', ['chest', 'directional4']],
+    'directional4': [['4)', 'directional5'], 'Unlike a normal directional lock, the central piece is a square instead of a circle'],
+    'directional5': [['5)', 'chest'], 'You have no clue what the combination is!'],
+    'frontwall': ['In front of you, you see a small locked chest and a stack of hay', ['Examine small chest', 'chest'], ['Examine hay stack', 'haystack'],['Turn left', 'leftwall'], ['Turn right', 'rightwall']],
     'haystack': ['There\'s a lot of hay...'],
     'safe':['There\'s a safe with a three digit combination lock', 'There\'s also a sticky note on the safe', ['Try combination', 'safecombo'], ['Examine sticky note', 'sticky'], ['Return', 'rightwall']],
     'safecombo':[['0','a0'], ['1','a1'], ['2','a2'], ['3','a3'], ['4','a4'], ['5','a5'], ['6','a6'], ['7','a7'], ['8','a8'], ['9','x9']],
@@ -53,27 +61,31 @@ export class MenuComponent  {
     'c7':['Nothing happens. Dang', ['Return', 'rightwall'], ['Try again', 'safecombo']],
     'c8':['Nothing happens. Dang', ['Return', 'rightwall'], ['Try again', 'safecombo']],
     'c9':['Nothing happens. Dang', ['Return', 'rightwall'], ['Try again', 'safecombo']],
-    'x7':['The safe dings and then the door pops open!', 'Awesome!', 'You\'re not sure how you knew the code, but you had a really good feeling about it', 'Inside the safe there\'s a paper that says "R4" on it.', ['Return', 'rightwall']],
+    'x7':['The safe dings and then the door pops open!', 'Awesome!', 'You\'re not sure how you knew the code, but you had a really good feeling about it', 'Inside the safe there\'s a paper that says "R R R R" on it.', ['Return', 'rightwall']],
     'sticky': ['The sticky note reads:',  '"NOTE TO SELF: Don\'t forget to hide the ladder in the room somewhere! Don\'t want a repeat of what happened last time!', 'Uh oh...', ['Return', 'safe']],
     'topdrawer':['Nothing'],
     'bottomdrawer':['There\'s a drawing of an eyeball scribbled out.', ['Return', 'cabinet']],
-    'bottomdraweralt':['There\'s text that glows in the dark written on the inside of the drawer', 'It reads P2', 'It\'s also luckily glowing brightly enough that you can see everything again', ['Return', 'cabinet']],
+    'bottomdraweralt':['There\'s text that glows in the dark written on the inside of the drawer', 'It looks like the letter P, written twice', 'It\'s also luckily glowing brightly enough that you can see everything again', ['Return', 'cabinet']],
     'cabinet': ['The cabinet has two drawers', ['Open top drawer', 'topdrawer'], ['Open bottom drawer', 'bottomdrawer'], ['Return', 'leftwall']],
     'lightswitch':['It looks like a normal light switch', ['Toggle the lights', 'lightswitch'], ['Return', 'backwall']],
     'rightwall': ['In front of you, you see a safe with a three digit lock, and a deep pit in the floor', ['Examine the pit', 'pit'], ['Examine the safe', 'safe'], ['Turn left', 'frontwall'], ['Turn right', 'backwall']],
-    'backwall': ['In front of you, you see a light switch', ['Examine the light switch', 'lightswitch'], ['Turn left', 'rightwall'], ['Turn right', 'leftwall']],
+    'door': ['The door leads outside, and has a 5 letter comination', ['Try comination', 'doorcombo'], ['Return', 'backwall']],
+    'doorcombo':[],
+    'backwall': ['In front of you, you see a light switch, and the door to the room', ['Examine the light switch', 'lightswitch'], ['Examine the door', 'door'], ['Turn left', 'rightwall'], ['Turn right', 'leftwall']],
     'leftwall': ['In front of you, you see a cabinet', ['Examine the cabinet', 'cabinet'],['Turn left', 'backwall'], ['Turn right', 'frontwall']],
     'zap': ['When you awake, you find yourself in a small room.', ['Get up.', 'leftwall']],
     'confront': ['You ask the wizard for help with your computer issues', '"FIRST YOU WAKE ME,"', '"THEN YOU TELL ME WHAT TO DO!?"', '"YOUR ARROGANCE SHALL BE PUNISHED"', ['The wizard takes out his wand and strikes you with a powerful ZAP!', 'zap']],
     'run': ['"COWARD!"', '"NAME YOURSELF! WHO SENT YOU?"', 'You continue running as you hear the wizard take out his wand, and then a loud', ['ZAP!','zap']],
     'adventure':[['Run away', 'run'], ['Confront the wizard', 'confront']],
     'wizard': ['Connecting...', 'Querying wizard...', 'The wizard shouts "WHO DARES AWAKE ME FROM MY SLUMBER?"', ['What do you do?','adventure']],
-    'loading..': [['loading...', '0000000000start']],
+    'loading..': ['Attempting to reload menu.', ['Continue', '0000000000start']],
     'options': [['Reload menu', 'loading..'], ['Query diagnostics wizard', 'wizard']],
     '0000000000start': ['FATAL ERROR', 'Failed to load resource:', 'entities.country_list', ['Diagnostic Options', 'options']],
-    'hay': ['Just a normal piece of hay', ['Return', 'haystack']],
+    'hay': ['Just a normal piece of hay', ['Return', 'frontwall']],
     'needle': ['There\'s a needle with a little piece of paper on it', ['Examine paper', 'lilpaper']],
-    'lilpaper': ['It has 3 circles on it', ['Return', 'haystack']]
+    'lilpaper': ['It has 3 circles on it.', 'You feel confident that was the only thing to find in the haystack. Phew.', ['Return', 'frontwall']],
+    'escape': ['The wizard (me) says', 'YEAH OKAY I DONT REALLY KNOW WHY I DID ALL THAT', 'IT WAS FUN THOUGH', ['ANYWAY, YOUR FINAL ANSWER IS THE NATIONAL SPORT OF THE', 'usa']],
+    'usa':['USA'],
   }
   namesT = []
   names = [['0000000000start']]
@@ -82,13 +94,43 @@ export class MenuComponent  {
 
   constructor(){
     for(var i=0; i<1000; i++){
-      if(i!=754){
+      if(i!=763){
         this.nexts['haystack'].push(['Examine hay #' + i, 'hayx' + i]);
+        this.nexts['hayx' + i] = this.nexts['hay'].slice()
       }
       else {
         this.nexts['haystack'].push(['Examine needle', 'needle']);
       }
     }
+    const al = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const ph = 'abcde';
+    for(var i =0; i<26; i++){
+      if(i%4 != 2 || i%7 != 4)
+        this.nexts['doorcombo'].push([al[i], 'a'+al[i]]);
+      else
+        this.nexts['doorcombo'].push([al[i], 'x'+al[i]])
+      this.nexts['e' + al[i]] = ['Nope...', ['Return', 'backwall']];
+    }
+    this.nexts['xT'] = ['It worked!',['Leave', 'escape']];
+    for(var j=0; j<4; j++){
+    for(var k =0; k<26; k++){
+      this.nexts[ph[j] + al[k]] = [];
+      for(var i =0; i<26; i++){
+        this.nexts[ph[j] + al[k]].push([al[i], ph[j+1]+al[i]]);
+      }
+    }
+    }
+    this.nexts['xO'] = this.nexts['cO'];
+    this.nexts['xO'][17][1] = 'xR';
+    this.nexts['xP'] = this.nexts['bP'];
+    this.nexts['xP'][14][1] = 'xO';
+    this.nexts['xQ'] = this.nexts['cQ'];
+    this.nexts['xQ'][16][1] = 'xP';
+    this.nexts['xR'] = this.nexts['dR'];
+    this.nexts['xR'][19][1] = 'xT';
+    this.nexts['xS'] = this.nexts['aS'];
+    this.nexts['xS'][15][1] = 'xP';
+
   }
 
   setChar(str, i, c){
@@ -97,6 +139,9 @@ export class MenuComponent  {
 
   init(a, s){
     this.menus[s.join('')] = a;
+    if(s[s.length-1].startsWith('directional') && s[s.length-1]!='directional' ){
+      return 'square';
+    }
     if(s[0][0] == '0'){
       return 'light';
     }
@@ -106,6 +151,7 @@ export class MenuComponent  {
     if(s[0][0] == '2'){
       return 'medium';
     }
+    
   }
 
   isArr(x){
@@ -126,15 +172,12 @@ export class MenuComponent  {
   }
 
   getNexts(s){
-    if(=='bottomdrawer'){
+    if(s[s.length-1]=='bottomdrawer'){
       if(s[0][0] == '0'){
         return this.nexts['bottomdrawer'];
       } else{
          return this.nexts['bottomdraweralt'];
       }
-    }
-    if(s[s.length-1].startsWith('hayx')){
-      return this.nexts['hay']
     }
     return this.nexts[s[s.length-1]];
   }
@@ -158,13 +201,29 @@ export class MenuComponent  {
   }
 
   idk(a, menu){
-   
+    let x = menu[menu.length-1];
+    if(x=='directional1' ||x=='chest' || x=='directional') return 'above'
+    if(x=='directional2') return 'below'
+    if(x=='directional3') return 'below'
+    if(x=='directional4') return 'below'
+    if(x=='directional5') return 'above'
+     
+    if(x=='rightwall')
+    return 'above';
     return (menu.length%4==1||menu.length%4==2)?'above':'below';
   }
+  //SSSNN  1 3
+  //EEWEW   2 4
+  //       3 5
 
   idk2(a, menu){
-    
-   
+    let x = menu[menu.length-1];
+    if(x=='directional1' ||x=='directional' || x=='chest') return 'before'
+    if(x=='directional2') return 'after'
+    if(x=='directional3') return 'before'
+    if(x=='directional4') return 'after'
+    if(x=='directional5') return 'after'
+    if(x=='rightwall') return 'before';
     return (menu.length%4>1)?'after':'before';
   }
 }
