@@ -142,7 +142,7 @@ export class MenuComponent  {
   names = [['0000000000start']]
   menus = {}
   ready = {}
-  country = "Select country"
+  country = "Select country of origin"
 
   pressed(){
     this.country = "Country: USA"

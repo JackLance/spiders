@@ -1,5 +1,49 @@
 <h4>Security Questions</h4>
 After filling out the form, for an extra level of security, please answer all of the following security questions:
-<mat-form-field>
-  <input matInput>
+
+<br>
+<mat-form-field appearance="outline"  class="thickish">
+  <mat-label>Favorite clothing item</mat-label>
+  <input matInput [formControl]='a' (change)="makeCap(a, 3)">
 </mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite type of car</mat-label>
+  <input matInput [formControl]='b' (change)="makeCap(b, 5)">
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite personal skill</mat-label>
+  <input matInput [formControl]='c' (change)="makeCap(c, 3)">
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite store</mat-label>
+  <input matInput [formControl]='d' (change)="makeCap(d, 1)">
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite building</mat-label>
+  <input matInput [formControl]='e' (change)="makeCap(e, 6)">
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite way to get money</mat-label>
+  <input matInput [formControl]='f' (change)="makeCap(f, 1)">
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite video game genre</mat-label>
+  <input matInput [formControl]='g' (change)="makeCap(g, 3)">
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite super power</mat-label>
+  <input matInput [formControl]='h' (change)="makeCap(h, 3)">
+</mat-form-field>
+<br>
+<mat-form-field appearance="outline" class="thickish">
+  <mat-label>Favorite Taylor Swift song</mat-label>
+  <input matInput [formControl]='i' (change)="makeAllCap(i)">
+</mat-form-field>
+<br>

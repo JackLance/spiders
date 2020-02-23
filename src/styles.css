@@ -3,15 +3,29 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 
+
 .thick {
   width:500px;
   
+}
+
+.spinner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .material-icons {
   font-family: 'Material Icons' !important;
 }
 
+.mat-form-field-wrapper {
+    padding-bottom: 1px;
+}
+
+.thickish {
+  width:250px;
+}
 
 .dark{
   background-color:#060606 !important;

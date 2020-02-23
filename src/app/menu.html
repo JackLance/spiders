@@ -6,7 +6,8 @@
     <div *ngIf="ready[menu]">
       
     <button  mat-menu-item *ngIf="isArr(sub)" [matMenuTriggerFor]="menus[follow(menu, sub).join('')]">{{sub[0]}}</button>
-    <button  mat-menu-item *ngIf="!isArr(sub)" >{{sub}}</button>
+    <button  mat-menu-item *ngIf="!isArr(sub)&&sub=='USA'" (click)="pressed()">{{sub}}</button>
+    <button  mat-menu-item *ngIf="!isArr(sub)&&sub!='USA'" >{{sub}}</button>
     </div>
     <div>
       <button mat-menu-item *ngIf="!ready[menu]" >loading...</button>

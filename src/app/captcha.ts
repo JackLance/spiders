@@ -20,7 +20,7 @@ export class CaptchaComponent  {
     this.asdf='loading'
     setTimeout(()=>{
         const dialogRef = this.dialog.open(DialogueComponent, {
-          width: '500px',
+          width: '400px',
         });
         dialogRef.afterClosed().subscribe(result => {
           console.log(result)
