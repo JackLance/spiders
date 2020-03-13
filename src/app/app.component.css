@@ -2,9 +2,13 @@ p {
   font-family: Lato;
 }
 
+.mat-card {
+  width:600px;
+}
 
-
-
+::ng-deep .my-tooltip {
+  text-align: left !important;
+}
 
 table {
   width: 500px;

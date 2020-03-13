@@ -252,7 +252,7 @@ export class UsernameComponent  {
   }
 
   click(){
-    this.control.setValue('MemberUsername')
+    this.control.setValue('memberusername')
     this.strength = 0;
   }
 

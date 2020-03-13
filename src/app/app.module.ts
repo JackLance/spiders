@@ -23,8 +23,10 @@ import { PasswordComponent } from './password';
 import { DialogueComponent } from './dialogue';
 import { MenuComponent } from './menu';
 import { MetaComponent } from './meta';
+import { PageComponent } from './page';
 
 import { BirthdayComponent } from './birthday';
+
 import {MatTableModule} from '@angular/material/table'; 
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button'; 
@@ -66,6 +68,7 @@ import {MatRadioModule} from '@angular/material/radio';
     BirthdayComponent,  
     PrimeComponent,
     InterestsComponent,
+    PageComponent,
     PasswordComponent,
     CaptchaComponent,
     DialogueComponent,
@@ -73,16 +76,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MetaComponent,
  ],
   bootstrap:    [ 
-   AppComponent,
-   UsernameComponent , 
-   PrivacyComponent, 
-   BirthdayComponent,  
-   PrimeComponent,
-   PasswordComponent,
-   InterestsComponent,
-   CaptchaComponent,
-   MenuComponent,
-    MetaComponent,
+
+   PageComponent,
+
 ]
 })
 export class AppModule { }
