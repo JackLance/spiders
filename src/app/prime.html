@@ -1,11 +1,12 @@
 <h3 style="color:#60a">Register for prime™</h3>
-Get <b style="color:#60a">prime</b> to try our selection of premium <b style="color:#60a">products</b>.
+<i style="color:#666">
+Get <b style="color:#60a">prime</b> to try our selection of premium <b style="color:#60a">products</b>. Upgrade your account by selecting your desired offerings to see which membership tier you qualify for.
+</i>
 <br>
-Upgrade your account by selecting your desired offerings to see which membership tier you qualify for.
 <br>
-<mat-form-field style="width:275px">
-  <mat-label>Select Features...</mat-label>
-  <mat-select [formControl]="control" multiple>
+<mat-form-field style="width:300px" appearance="fill">
+
+  <mat-select placeholder="Select features..." [formControl]="control" multiple >
     <mat-select-trigger>
       {{compute(control.value)}}
     </mat-select-trigger>

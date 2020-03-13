@@ -3,7 +3,7 @@ p {
 }
 
 .mat-card {
-  width:600px;
+  width:800px;
 }
 
 ::ng-deep .my-tooltip {

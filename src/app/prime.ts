@@ -37,12 +37,12 @@ export class PrimeComponent  {
     {txt:"Mega silver plus account", min:222},
     {txt:"Gold account", min:555},
     {txt:"Mega gold plus account", min:1111},
-    {txt:"Platinum Account", min:5555},
-    {txt:"Mega platinum plAccount", min:11111},
-    {txt:"Platinum diamond Account", min:55555},
-    {txt:"Mega platinum diamond plus Account", min:111111},
-    {txt:"Max Account", min:111112},   
-    {txt:"Mega max plus Account", min:1111111},
+    {txt:"Platinum account", min:5555},
+    {txt:"Mega platinum plus account", min:11111},
+    {txt:"Platinum diamond account", min:55555},
+    {txt:"Mega platinum diamond plus account", min:111111},
+    {txt:"Max account", min:111112},   
+    {txt:"Mega max plus account", min:1111111},
   ]
 
   compute(selection){
