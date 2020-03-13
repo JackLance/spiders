@@ -34,6 +34,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSliderModule} from '@angular/material/slider'; 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports:      [ 
@@ -47,6 +48,7 @@ import {MatRadioModule} from '@angular/material/radio';
   MatCheckboxModule,
   MatRadioModule,
   MatDialogModule,
+  MatIconModule,
   MatCardModule,
   MatInputModule,
   MatMenuModule,

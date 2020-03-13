@@ -30,19 +30,19 @@ export class PrimeComponent  {
   ];
   
   tiers = [
-    {txt:"Basic Account", min:1, },
-    {txt:"Bronze Account", min:11},
-    {txt:"Bronze Plus Account", min:55},
-    {txt:"Silver Account", min:111},
-    {txt:"Silver Plus Account", min:222},
-    {txt:"Gold Account", min:555},
-    {txt:"Gold Plus Account", min:1111},
+    {txt:"Basic account", min:1, },
+    {txt:"Bronze account", min:11},
+    {txt:"Mega bronze plus account", min:55},
+    {txt:"Silver account", min:111},
+    {txt:"Mega silver plus account", min:222},
+    {txt:"Gold account", min:555},
+    {txt:"Mega gold plus account", min:1111},
     {txt:"Platinum Account", min:5555},
-    {txt:"Platinum Plus Account", min:11111},
-    {txt:"Platinum Diamond Account", min:55555},
-    {txt:"Platinum Diamond Plus Account", min:111111},
+    {txt:"Mega platinum plAccount", min:11111},
+    {txt:"Platinum diamond Account", min:55555},
+    {txt:"Mega platinum diamond plus Account", min:111111},
     {txt:"Max Account", min:111112},   
-    {txt:"Max Plus Account", min:1111111},
+    {txt:"Mega max plus Account", min:1111111},
   ]
 
   compute(selection){
