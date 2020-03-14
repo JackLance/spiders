@@ -58177,16 +58177,17 @@ constructor(){
       let vw = ['a','e','i','o','u'];
       if(x!='y' && y!='y' && vw.includes(x)==vw.includes(y)) return {g:true}
     }
+    let row = ['a','s','d','f','g','h','j','k','l'];
+    for(let ltr of row){
+      if(val.toLowerCase().includes(ltr)) return {i:true};
+    }
     lines = {a:1, b:3, c:3, d:2, e:1, f:4, g:2, h:4, i:1, j:10, k:5, l:1, m:3, n:1, o:1, p:3, q:10, r:1, s:1, t:1, u:1, v:4, w:4, x:8, y:4, z:10};
      total = 0;
     for(var i=0; i<val.length; i++){
       total+=lines[val[i].toLowerCase()];
     }
     if(total<18) return {h:true};
-    let row = ['a','s','d','f','g','h','j','k','l'];
-    for(let ltr of row){
-      if(val.toLowerCase().includes(ltr)) return {i:true};
-    }
+    
     return undefined;
   }
   

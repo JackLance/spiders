@@ -1,9 +1,11 @@
 
 <mat-card style="background-color:#f8f8f8; width:225px; height:50px;margin:auto">
+  <div *ngIf="asdf=='win'" style="height:12px"></div>
   <div>
     <span *ngIf="asdf=='win'" style="color:green; font-size:20px;">✔</span>
 <mat-checkbox (change)="toLoad()" *ngIf="asdf=='check'"></mat-checkbox>
 <mat-spinner style="margin:auto auto;display:inline-block;" *ngIf="asdf=='loading'" diameter='20' strokeWidth='3'></mat-spinner>
-I'm not a robot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://i.imgur.com/EDAN5m3.png"  align="middle" style="width:50px">
+I'm not a robot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <img *ngIf="asdf=='check' || asdf=='loading'"src="https://i.imgur.com/EDAN5m3.png"  align="middle" style="width:50px">
 </div>
 </mat-card>

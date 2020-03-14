@@ -1,11 +1,11 @@
 <mat-form-field appearance="outline" class="thick" (click)="click()" style="padding:0">
   <mat-icon style="color:#663aad">account_circle</mat-icon>
   &nbsp;&nbsp;
-  <input thick placeholder="Member Username" matInput required [formControl]="control" [matTooltip]="info" matTooltipPosition="right" [matTooltipClass]="'my-tooltip'" (keypress)="press($event)" style="width:auto; height:30px;">
-  <mat-hint *ngIf="strength==0" style="color:#800">Strength: Poor ☆☆☆☆☆</mat-hint>
-  <mat-hint *ngIf="strength==1" style="color:#850">Strength: Fair ★☆☆☆☆</mat-hint>
-  <mat-hint *ngIf="strength==2" style="color:#830">Strength: Okay ★★☆☆☆</mat-hint>
-  <mat-hint *ngIf="strength==3" style="color:#880">Strength: Good ★★★☆☆</mat-hint>
-  <mat-hint *ngIf="strength==4" style="color:#480">Strength: Great ★★★★☆</mat-hint>
-  <mat-hint *ngIf="strength==5" style="color:#080">Strength: Terrific ★★★★★</mat-hint>
+  <input thick placeholder="Member Username" matInput required [formControl]="control" [matTooltip]="info" matTooltipPosition="right" [matTooltipClass]="'my-tooltip'" (keypress)="press($event)" style="width:90%; height:30px;">
+  <mat-hint *ngIf="strength==0" style="color:#800">Poor strength ☆☆☆☆☆</mat-hint>
+  <mat-hint *ngIf="strength==1" style="color:#850">Fair strength ★☆☆☆☆</mat-hint>
+  <mat-hint *ngIf="strength==2" style="color:#830">Okay strength ★★☆☆☆</mat-hint>
+  <mat-hint *ngIf="strength==3" style="color:#880">Good strength ★★★☆☆</mat-hint>
+  <mat-hint *ngIf="strength==4" style="color:#480">Great strength ★★★★☆</mat-hint>
+  <mat-hint *ngIf="strength==5" style="color:#080">Terrific strength ★★★★★</mat-hint>
 </mat-form-field>

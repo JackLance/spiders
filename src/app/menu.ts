@@ -40,7 +40,7 @@ export class MenuComponent  {
     'SE4':[['NW', 'NW5'], ['NE', 'NE5'], ['SW', 'SW5'], ['SE', 'SE5']],
     'SW4':[['NW', 'NW5'], ['NE', 'NE5'], ['SW', 'SW5'], ['SE', 'SE5']],
     'SW4X':[['NW', 'NW5X'], ['NE', 'NE5'], ['SW', 'SW5'], ['SE', 'SE5']],
-    'NW5X': ['The chest opened!', 'It has 5 Ts written inside', ['Return', 'chest']],
+    'NW5X': ['The chest opened!', 'It has ????T written inside', ['Return', 'chest']],
     'NW5': ['Looks like that wasn\'t it', 'The lock reset', ['Return', 'chest']],
     'NE5': ['Looks like that wasn\'t it', 'The lock reset', ['Return', 'chest']],
     'SE5': ['Looks like that wasn\'t it', 'The lock reset', ['Return', 'chest']],
@@ -50,7 +50,7 @@ export class MenuComponent  {
     'directional2': [['2)', 'directional3'], 'The lock is rotated by 45 degrees, so the directions are NE, NW, SE, and SW'],
     'directional3': ['3) The lock is placed around the chest\'s clasp tightly so you cannot open the', ['chest', 'directional4']],
     'directional4': ['4) Unlike a normal directional lock, the central piece is a square instead of a', ['circle', 'directional5']],
-    'directional5': [['5)', 'chest'], 'You have no clue what the combination is!'],
+    'directional5': [['5)', 'chest'], 'You have no clue what the combo is! If only you were more observant.'],
     'frontwall': ['In front of you, you see a small locked chest and a stack of hay',  ['Examine hay stack', 'haystack'],['Examine small chest', 'chest'],['Turn left', 'leftwall'], ['Turn right', 'rightwall']],
     'haystack': ['There\'s a lot of hay...'],
     'safe':['There\'s a safe with a three digit combination lock', 'There\'s also a sticky note on the safe', ['Try combination', 'safecombo'], ['Examine sticky note', 'sticky'], ['Return', 'rightwall']],
@@ -86,11 +86,11 @@ export class MenuComponent  {
     'c7':['Nothing happens. Dang', ['Return', 'rightwall'], ['Try again', 'safecombo']],
     'c8':['Nothing happens. Dang', ['Return', 'rightwall'], ['Try again', 'safecombo']],
     'c9':['Nothing happens. Dang', ['Return', 'rightwall'], ['Try again', 'safecombo']],
-    'x7':['The safe dings and then the door pops open!', 'Awesome!', 'You\'re not sure how you knew the code, but you had a really good feeling about it', 'Inside the safe there\'s a paper that says "R R R R" on it.', ['Return', 'rightwall']],
+    'x7':['The safe dings and then the door pops open!', 'Awesome!', 'You\'re not sure how you knew the code, but you had a really good feeling about it', 'Inside the safe there\'s a paper that says "???R?" on it.', ['Return', 'rightwall']],
     'sticky': ['The sticky note reads:',  '"NOTE TO SELF: Don\'t forget to hide the ladder in the room somewhere! Don\'t want a repeat of what happened last time!', 'Uh oh...', ['Return', 'safe']],
     'topdrawer':['There\'s nothing inside it',],
-    'bottomdrawer':['There\'s a drawing of an eyeball scribbled out.', ['Return', 'desk']],
-    'bottomdraweralt':['There\'s text that glows in the dark written on the inside of the drawer', 'It looks like the letter P, written twice', 'It\'s also luckily glowing brightly enough that you can see everything again', ['Return', 'desk']],
+    'bottomdrawer':['There\'s a drawing of a broken lightbulb.', ['Return', 'desk']],
+    'bottomdraweralt':['There\'s text that glows in the dark written on the inside of the drawer', 'It looks like it says ?P???', 'It\'s also luckily glowing brightly enough that you can see everything again', ['Return', 'desk']],
     'desk': ['The desk has two drawers', ['Open top drawer', 'topdrawer'], ['Open bottom drawer', 'bottomdrawer'], ['Return', 'leftwall']],
     'lightswitch':['It looks like a normal light switch', ['Toggle the lights', 'lightswitch'], ['Return', 'backwall']],
     'rightwall': ['In front of you, you see a safe with a three digit lock, and a deep pit in the floor', ['Examine the pit', 'pit'], ['Examine the safe', 'safe'], ['Turn left', 'frontwall'], ['Turn right', 'backwall']],
@@ -108,7 +108,7 @@ export class MenuComponent  {
     'climb3': ['You\'ve already unscrewed the vent cover', ['Return', 'cabinet']],
     'unscrew': ['The piece of paper falls from the ceiling, but lands behind the desk, so you can\'t get to it.', ['Return', 'cabinet']],
     
-    'fellpaper':['It\'s got a little squiggle on it', 'Could be an S?', ['Return', 'cabinet']],
+    'fellpaper':['It\'s got a message on it', 'It says S????', ['Return', 'cabinet']],
     'cabinet00':['The cabinet is on your left, with the drawer facing right', ['Examine the drawer', 'drawer0'],['Move the cabinet to the right', 'move'], ['Return', 'backwall']],
     'cabinet10':['There\'s a key where the cabinet was. The drawer is facing the wall now so you can\'t open it', ['Take the key', 'key'], ['Climb on the cabinet', 'climb0'], ['Move the cabinet to the left', 'move'], ['Return', 'backwall']],
     'cabinet01':['The cabinet is on your left, with the drawer facing right', ['Examine the drawer', 'drawer1'],['Move the cabinet to the right', 'move'], ['Return', 'backwall']],
@@ -127,9 +127,9 @@ export class MenuComponent  {
     'loading..': ['Attempting to reload menu.', ['Continue', '0000000000start']],
     'options': [['Reload menu', 'loading..'], ['Query diagnostics wizard', 'wizard']],
     '0000000000start': ['FATAL ERROR', 'Failed to load resource:', 'entities.country_list', ['Diagnostic Options', 'options']],
-    'hay': ['Just a normal piece of hay', ['Return', 'frontwall']],
+    'hay': ['Just a normal piece of hay. That\'s not what you\'re looking for', ['Return', 'frontwall']],
     'needle': ['There\'s a needle with a little piece of paper on it', ['Examine paper', 'lilpaper']],
-    'lilpaper': ['It has 3 circles on it.', 'You feel confident that was the only thing to find in the haystack. Phew.', ['Return', 'frontwall']],
+    'lilpaper': ['It has ??O?? written on it.', 'You feel confident that was the only thing to find in the haystack. Phew.', ['Return', 'frontwall']],
     'escape': ['The wizard (me) says', 'YEAH OKAY I DONT REALLY KNOW WHY I DID ALL THAT', 'IT WAS FUN THOUGH', ['ANYWAY, YOUR FINAL ANSWER IS THE NATIONAL SPORT OF THE', 'usa']],
     'usa':['USA'],
     'cabinet':[]
@@ -149,13 +149,13 @@ export class MenuComponent  {
   }
 
   constructor(){
-    for(var i=0; i<1000; i++){
-      if(i!=763){
-        this.nexts['haystack'].push(['Examine hay #' + i, 'hayx' + i]);
+    for(var i=0; i<100; i++){
+      if(i!=83){
+        this.nexts['haystack'].push(['Examine a piece of hay', 'hayx' + i]);
         this.nexts['hayx' + i] = this.nexts['hay'].slice()
       }
       else {
-        this.nexts['haystack'].push(['Examine needle', 'needle']);
+        this.nexts['haystack'].push(['Examine a needle', 'needle']);
       }
     }
     const al = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'

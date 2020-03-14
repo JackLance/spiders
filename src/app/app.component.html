@@ -1,12 +1,18 @@
+<h3 style="color:#663aad">Options</h3>
+
 <mat-form-field class="thick" appearance="outline" floatLabel="hmm">
 
       <mat-chip-list>
-      <mat-chip *ngFor="let chip of selected" [disabled]="true" [selectable]="false">{{chip}}</mat-chip>
+      <mat-chip *ngFor="let chip of selected" [disabled]="true" [selectable]="false">{{chip}}&nbsp;&nbsp;
+        <mat-icon>
+          cancel
+        </mat-icon>
+      </mat-chip>
           
 
        <input type="text"
            matInput
-           placeholder="Visual Options"
+           placeholder="(type to select audiovisual options...)"
            #input
            (focus) = "clearChips($event)"
            (change) = "selectChips($event)"

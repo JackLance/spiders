@@ -113,7 +113,7 @@ export class UsernameComponent  {
       case 71: //go to
         let ind = 0;
         for(var j = val.length-1; j>0; j--){
-          if(val.charCodeAt(j)>=65 && val.charCodeAt(j)<=90){
+          if(val.charCodeAt(j)==val.charCodeAt(0)){
             ind = j;
           }
         }
@@ -129,11 +129,8 @@ export class UsernameComponent  {
         for(var i=0; i<val.length; i++){
           if(i%3==0){
             let cd = val.charCodeAt(i);
-            if(cd >= 65 && cd <= 95){
-              val2+=String.fromCharCode(cd+32)
-            }else{
-              val2+=String.fromCharCode(cd-32)
-            }
+              val2+=String.fromCharCode(cd+1)
+
           }else{
             val2+=val[i];
           }
@@ -182,14 +179,12 @@ export class UsernameComponent  {
         return 'tab' + val;
       case 85: //Underline
         for(var i=0; i<val.length; i++){
-
             let cd = val.charCodeAt(i);
-            if(!(cd >= 65 && cd <= 95)){
-              if(i==0 || !(val.charCodeAt(i-1)>=65 && val.charCodeAt(i-1)<=95)){
+            if((cd >= 65 && cd <= 95) || i%2==0){
+
                 val2+=val[i];
-              }
             }else{
-              val2+=String.fromCharCode(cd+32)
+              val2+=String.fromCharCode(cd-32)
             }
           
         }

@@ -12,7 +12,16 @@ import {MatAutocompleteTrigger} from '@angular/material/autocomplete';
 })
 export class AppComponent  {
   myControl = new FormControl();
-  options: string[] = ['Luminous Keyboard', 'Emoji Screenreader', 'Multisensory Audio', 'Automatic Reminders', 'Amplified Renderings', 'Colorblind Touchscreen', 'Microphone Viewer', 'Monitor Detection', 'Submliminal Messages', 'Magnified GIFs'];
+  options: string[] = ['Compressing keyboard',
+'Colorblind touchscreen', 
+'Emoji screenreader',
+'Magnified GIFs',
+'Webcam viewfinders',
+'Microphone locator', 
+'Immersive downloading',
+'Monitor detection', 
+'Amplified renderings',
+'Message encoder', ];
   filteredOptions: Observable<string[]>;
   selected = [];
    @ViewChild('input') input: ElementRef;
