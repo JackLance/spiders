@@ -194,7 +194,9 @@ export class MenuComponent  {
   arrCopy(x){
     let y = [];
     for(let a of x){
-      y.push(a.slice());
+      if(typeof a == 'string') y.push(a);
+
+      ey.push(a.slice());
     }
     return y;
   }
