@@ -144,6 +144,8 @@ export class MenuComponent  {
   ready = {}
   country = "Select country of origin"
 
+
+
   pressed(){
     this.country = "usa"
   }
@@ -176,17 +178,25 @@ export class MenuComponent  {
       }
     }
     }
-    this.nexts['xO'] = this.nexts['cO'];
+    this.nexts['xO'] = this.arrCopy(this.nexts['cO'].slice());
     this.nexts['xO'][17][1] = 'xR';
-    this.nexts['xP'] = this.nexts['bP'];
+    this.nexts['xP'] = this.arrCopy(this.nexts['bP'].slice());
     this.nexts['xP'][14][1] = 'xO';
-    this.nexts['xQ'] = this.nexts['cQ'];
+    this.nexts['xQ'] = this.arrCopy(this.nexts['cQ'].slice());
     this.nexts['xQ'][16][1] = 'xP';
-    this.nexts['xR'] = this.nexts['dR'];
+    this.nexts['xR'] = this.arrCopy(this.nexts['dR'].slice());
     this.nexts['xR'][19][1] = 'xT';
-    this.nexts['xS'] = this.nexts['aS'];
+    this.nexts['xS'] = this.arrCopy(this.nexts['aS'].slice());
     this.nexts['xS'][15][1] = 'xP';
 
+  }
+
+  arrCopy(x){
+    let y = [];
+    for(let a of x){
+      y.push(a.slice());
+    }
+    return y;
   }
 
   setChar(str, i, c){
