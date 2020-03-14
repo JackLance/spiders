@@ -13,13 +13,13 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class PrivacyComponent  {
   displayedColumns = ['Title', '0', '1', '2', '3', '4', 'reset']
-  stuff = ["Friends", "Family", "Acquaintances", "Strangers", "Nemeses"]
-  data =  [{pos:0, name: "My pictures", 0:true, 1:true, 2:false, 3:true, 4:true}]
+  stuff = ["...friends", "...family", "...acquaintances", "...strangers", "...nemeses"]
+  data =  [{pos:0, name: "Likes and dislikes", 0:true, 1:true, 2:false, 3:true, 4:true}]
   dataSource = new MatTableDataSource<any>(this.data);   
-  dataSource2 = [{pos:0, name: "My pictures", 0:true, 1:true, 2:false, 3:true, 4:true},
-                {pos:1, name: "My posts", 0:false, 1:false, 2:true, 3:false, 4:true},
-                {pos:2, name: "My personal info", 0:false, 1:false, 2:true, 3:true, 4:false},
-                {pos:3, name: "Me when I'm sleeping", 0:false, 1:false, 2:true, 3:true, 4:false}]
+  dataSource2 = [{pos:0, name: "Likes and dislikes", 0:true, 1:true, 2:false, 3:true, 4:true},
+                {pos:1, name: "Known information", 0:false, 1:false, 2:true, 3:false, 4:true},
+                {pos:2, name: "Wishes, thoughts, and secrets", 0:false, 1:false, 2:true, 3:true, 4:false},
+                {pos:3, name: "Location at all times", 0:false, 1:false, 2:true, 3:true, 4:false}]
 
   propagate = [
     [[1], [2], [3], [4], []],

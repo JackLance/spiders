@@ -145,7 +145,7 @@ export class MenuComponent  {
   country = "Select country of origin"
 
   pressed(){
-    this.country = "Country: USA"
+    this.country = "usa"
   }
 
   constructor(){
