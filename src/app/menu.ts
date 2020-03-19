@@ -196,7 +196,7 @@ export class MenuComponent  {
     for(let a of x){
       if(typeof a == 'string') y.push(a);
 
-      ey.push(a.slice());
+      y.push(a.slice());
     }
     return y;
   }
